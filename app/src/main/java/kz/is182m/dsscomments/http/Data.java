@@ -7,34 +7,21 @@ import java.util.List;
 
 public class Data {
 
- /*   {
-        "negativeSelectedWords": [],
-        "positiveSelectedWords": [
-        "привет",
-                "мир",
-                "добросердечность"
-    ],
-        "negativeWordCount": 0,
-            "positiveWordCount": 3,
-            "negativePercent": 0,
-            "positivePercent": 1
-    }*/
- @SerializedName("negativeSelectedWords")
- @Expose
+    /*   {
+           "negativeSelectedWords": [],
+           "positiveSelectedWords": [
+           "привет",
+                   "мир",
+                   "добросердечность"
+       ],
+           "negativeWordCount": 0,
+               "positiveWordCount": 3,
+               "negativePercent": 0,
+               "positivePercent": 1
+       }*/
+    @SerializedName("negativeSelectedWords")
+    @Expose
     private List<String> negativeSelectedWords;
-
-    @Override
-    public String toString() {
-        return "Data{" +
-                "negativeSelectedWords=" + negativeSelectedWords +
-                ", positiveSelectedWords=" + positiveSelectedWords +
-                ", negativeWordCount=" + negativeWordCount +
-                ", positiveWordCount=" + positiveWordCount +
-                ", negativePercent=" + negativePercent +
-                ", positivePercent=" + positivePercent +
-                '}';
-    }
-
     @SerializedName("positiveSelectedWords")
     @Expose
     private List<String> positiveSelectedWords;
@@ -61,6 +48,18 @@ public class Data {
     }
 
     public Data() {
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "negativeSelectedWords=" + negativeSelectedWords +
+                ", positiveSelectedWords=" + positiveSelectedWords +
+                ", negativeWordCount=" + negativeWordCount +
+                ", positiveWordCount=" + positiveWordCount +
+                ", negativePercent=" + negativePercent +
+                ", positivePercent=" + positivePercent +
+                '}';
     }
 
     public List<String> getNegativeSelectedWords() {
