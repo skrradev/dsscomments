@@ -6,7 +6,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkService {
 
     private static NetworkService mInstance;
-    private static final String BASE_URL = "http://192.168.103.95:8080";
+
+    public NetworkService setBASE_URL(String BASE_URL) {
+        String  url = "http://" + BASE_URL + ":8080";
+
+        this.BASE_URL = url;
+        return this;
+    }
+
+    private  String BASE_URL = "http://192.168.103.95:8080";
+
     private Retrofit mRetrofit;
 
 

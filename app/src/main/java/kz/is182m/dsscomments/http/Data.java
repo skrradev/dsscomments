@@ -5,20 +5,21 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+
 public class Data {
 
     /*   {
-           "negativeSelectedWords": [],
-           "positiveSelectedWords": [
-           "привет",
-                   "мир",
-                   "добросердечность"
-       ],
-           "negativeWordCount": 0,
-               "positiveWordCount": 3,
-               "negativePercent": 0,
-               "positivePercent": 1
-       }*/
+               "negativeSelectedWords": [],
+               "positiveSelectedWords": [
+               "привет",
+                       "мир",
+                       "добросердечность"
+           ],
+               "negativeWordCount": 0,
+                   "positiveWordCount": 3,
+                   "negativePercent": 0,
+                   "positivePercent": 1
+           }*/
     @SerializedName("negativeSelectedWords")
     @Expose
     private List<String> negativeSelectedWords;
@@ -37,17 +38,30 @@ public class Data {
     @SerializedName("positivePercent")
     @Expose
     private Double positivePercent;
+    @SerializedName("originalWords")
+    @Expose
+    private List<String> originalWords;
+    @SerializedName("normalizedWords")
+    @Expose
+    private List<String> normalizedWords;
+    @SerializedName("neutralWordCount")
+    @Expose
+    private int neutralWordCount;
+    @SerializedName("neutralPercent")
+    @Expose
+    private double neutralPercent;
 
-    public Data(List<String> negativeSelectedWords, List<String> positiveSelectedWords, Integer negativeWordCount, Integer positiveWordCount, Double negativePercent, Double positivePercent) {
+    public Data(List<String> negativeSelectedWords, List<String> positiveSelectedWords, Integer negativeWordCount, Integer positiveWordCount, Double negativePercent, Double positivePercent, List<String> originalWords, List<String> normalizedWords, int neutralWordCount, double neutralPercent) {
         this.negativeSelectedWords = negativeSelectedWords;
         this.positiveSelectedWords = positiveSelectedWords;
         this.negativeWordCount = negativeWordCount;
         this.positiveWordCount = positiveWordCount;
         this.negativePercent = negativePercent;
         this.positivePercent = positivePercent;
-    }
-
-    public Data() {
+        this.originalWords = originalWords;
+        this.normalizedWords = normalizedWords;
+        this.neutralWordCount = neutralWordCount;
+        this.neutralPercent = neutralPercent;
     }
 
     @Override
@@ -59,6 +73,10 @@ public class Data {
                 ", positiveWordCount=" + positiveWordCount +
                 ", negativePercent=" + negativePercent +
                 ", positivePercent=" + positivePercent +
+                ", originalWords=" + originalWords +
+                ", normalizedWords=" + normalizedWords +
+                ", neutralWordCount=" + neutralWordCount +
+                ", neutralPercent=" + neutralPercent +
                 '}';
     }
 
@@ -109,4 +127,38 @@ public class Data {
     public void setPositivePercent(Double positivePercent) {
         this.positivePercent = positivePercent;
     }
+
+    public List<String> getOriginalWords() {
+        return originalWords;
+    }
+
+    public void setOriginalWords(List<String> originalWords) {
+        this.originalWords = originalWords;
+    }
+
+    public List<String> getNormalizedWords() {
+        return normalizedWords;
+    }
+
+    public void setNormalizedWords(List<String> normalizedWords) {
+        this.normalizedWords = normalizedWords;
+    }
+
+    public int getNeutralWordCount() {
+        return neutralWordCount;
+    }
+
+    public void setNeutralWordCount(int neutralWordCount) {
+        this.neutralWordCount = neutralWordCount;
+    }
+
+    public double getNeutralPercent() {
+        return neutralPercent;
+    }
+
+    public void setNeutralPercent(double neutralPercent) {
+        this.neutralPercent = neutralPercent;
+    }
+
+
 }
